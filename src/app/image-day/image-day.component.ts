@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { ImageItem } from './imageItem';
+import { ImageDayService } from './image-day.service';
 
 @Component({
   selector: 'app-image-day',
