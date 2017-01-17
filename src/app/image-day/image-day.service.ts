@@ -7,13 +7,17 @@ import { ImageItem } from './imageItem';
 
 @Injectable()
 export class ImageDayService {
-  private nasaUrl = 'app/gallery'; // URI to web api
+  //private key = 'aZlmHCp3jD9sanwE8KvytidYArlTvlhwr3fEhYyM';
+  private nasaUrl = 'https://api.nasa.gov/planetary/earth/assets?lon=100.75&lat=1.5&begin=DEMO_KEY';
+
   constructor(private http: Http) { }
 
-  getImage( type:string, value:string ):Promise<ImageItem[]> {
+  getImage():Promise<ImageItem[]> {
+
+    console.log( "getImage" );
 
     return this.http
-      .get( nasaUrl  )
+      .get( this.nasaUrl )
       .toPromise()
       .then(response => response.json().data as ImageItem[])
       .catch(this.handleError);

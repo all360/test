@@ -11,9 +11,21 @@ import { ImageDayService } from './image-day.service';
 })
 export class ImageDayComponent implements OnInit {
   title = 'Image of the Day';
-  constructor() { }
+  imageItem: ImageItem[];
+
+  constructor( private router: Router,
+                private route: ActivatedRoute,
+               private imageDayService: ImageDayService) { }
 
   ngOnInit() {
+      this.getImage();
+  }
+
+  getImage(): void {
+
+    this.route.params
+      .switchMap((params: Params) => this.imageDayService.getImage())
+      .subscribe(data => this.imageItem = data);
   }
 
 }
