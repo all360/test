@@ -14,11 +14,16 @@ export class ImageDayComponent implements OnInit {
   imageItem: ImageItem[];
 
   constructor( private router: Router,
-                private route: ActivatedRoute,
-               private imageDayService: ImageDayService) { }
+               private route: ActivatedRoute,
+               private imageDayService: ImageDayService ) { }
 
   ngOnInit() {
       this.getImage();
+
+      /*this.imageDayService.getImage()
+      .subscribe(data => this.imageItem = data);*/
+
+      setTimeout(() => console.log("imageItem2", this.imageItem), 2000);
   }
 
   getImage(): void {
