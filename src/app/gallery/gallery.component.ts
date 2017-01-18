@@ -26,14 +26,15 @@ export class GalleryComponent implements OnInit {
 
   setRandomImage( data ):void{
     this.galleryItem = data;
-    this.dailyImage = this.galleryItem[ Math.floor((Math.random() * this.galleryItem.length))];
+    this.dailyImage = this.galleryItem[0];
+    //this.dailyImage = this.galleryItem[ Math.floor((Math.random() * this.galleryItem.length))];
     this.earth_date = new Date( this.dailyImage.earth_date );
     console.log( "setRandomImage ", this.dailyImage.id, this.dailyImage.earth_date );
   }
 
   getGallery(): void {
     this.route.params
-      .switchMap((params: Params) => this.galleryService.getGallery())
+      .switchMap((params: Params) => this.galleryService.getGallery( params['camera']))
       .subscribe(data => this.setRandomImage( data));
   }
 

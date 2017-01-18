@@ -9,12 +9,12 @@ export class GalleryService {
 
   constructor(private http: Http) { }
 
-  getGallery():Promise<GalleryItem[]> {
+  getGallery(camera:string = "FHAZ"):Promise<GalleryItem[]> {
 
     const KEY = "aZlmHCp3jD9sanwE8KvytidYArlTvlhwr3fEhYyM";
     let date = new Date();
     let today = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+(date.getDate()-1);
-    let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${today}&api_key=${KEY}`;
+    let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${today}&camera=${camera}&api_key=${KEY}`;
 
     let headers = new Headers({ 'Access-Control-Allow-Origin': 'http://localhost:4200' });
     let options = new RequestOptions({ headers: headers });

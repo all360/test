@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/daily-image', pathMatch: 'full' },
   { path: 'navigation', component: NavigationComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'gallery/:camera', component: GalleryComponent },
   { path: 'daily-image', component: ImageDayComponent }
 
 ];
