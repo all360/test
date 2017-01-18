@@ -12,13 +12,15 @@ import { ImageDayComponent } from './image-day/image-day.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageDayService } from './image-day/image-day.service';
 import {GalleryService} from "./gallery/gallery.service";
+import { GalleriesComponent } from './galleries/galleries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     ImageDayComponent,
-    GalleryComponent
+    GalleryComponent,
+    GalleriesComponent
   ],
   imports: [
     BrowserModule,
