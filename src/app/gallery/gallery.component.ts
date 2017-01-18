@@ -21,6 +21,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit() {
     this.getGallery();
+    setTimeout(() => console.log("gallery", this.galleryItem), 2000);
   }
 
   setRandomImage( data ):void{
