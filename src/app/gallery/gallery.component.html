@@ -1,15 +1,65 @@
-<div class="p-y-lg app-block-main" *ngIf="dailyImage">
+<div class="app-block-main" *ngIf="dailyImage">
   <div class="container">
+
     <div class="row">
-      <div class="col-sm-5 col-lg-7 ">
-        <div class="image-holder">
-          <h2>
-            {{title}}
-          </h2>
-          <img [src]="dailyImage.img_src">
-          <h4>{{ earth_date | date:'longDate'}}</h4>
-        </div>
+      <div class="col-sm-6">
+        <h2>Cam Name</h2>
       </div>
+      <div class="col-sm-6">
+
+        <ul class="nav navbar-nav navbar-left">
+        <li class="active dropdown" role="presentation">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <h4>Gallery <span class="icon icon-chevron-small-down"></span></h4>
+          </a>
+          <ul class="dropdown-menu">
+            <li ><a routerLink="/gallery/featured/1">Featured</a></li>
+            <li><a routerLink="/gallery">All</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-6 col-md-3 app-image-holder">
+        <img [src]="dailyImage.img_src">
+        <h4>{{ earth_date | date:'longDate'}}</h4>
+      </div>
+
+      <div class="col-sm-6 col-md-3 app-image-holder">
+        <img [src]="dailyImage.img_src">
+        <h4>{{ earth_date | date:'longDate'}}</h4>
+      </div>
+
+      <div class="col-sm-6 col-md-3 app-image-holder">
+        <img [src]="dailyImage.img_src">
+        <h4>{{ earth_date | date:'longDate'}}</h4>
+      </div>
+
+      <div class="col-sm-6 col-md-3 app-image-holder">
+        <img [src]="dailyImage.img_src">
+        <h4>{{ earth_date | date:'longDate'}}</h4>
+      </div>
+
     </div>
   </div>
 </div>
+
+
+
+<!--
+<div class="row">
+  <div class="col-sm-5 col-lg-7 ">
+    <div class="image-holder">
+      <h2>
+        {{title}}
+      </h2>
+      <img [src]="dailyImage.img_src">
+      <h4>{{ earth_date | date:'longDate'}}</h4>
+    </div>
+  </div>
+</div>
+-->
