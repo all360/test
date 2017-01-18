@@ -10,7 +10,7 @@ import { GalleryService } from './gallery.service';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  title = 'Gallery Cam';
+  title:string;
   galleryItem: GalleryItem[];
   dailyImage: GalleryItem;
   earth_date: number;
@@ -24,11 +24,20 @@ export class GalleryComponent implements OnInit {
     setTimeout(() => console.log("gallery", this.galleryItem), 2000);
   }
 
+  formatDate( earthDate:string ):number{
+
+    return new Date( earthDate );
+  }
+
+
   setRandomImage( data ):void{
     this.galleryItem = data;
     this.dailyImage = this.galleryItem[0];
+    this.title = this.galleryItem[0].camera.name + " : " + this.galleryItem[0].camera.full_name;
+    console.log( "this.galleryItem[0].camera.name", this.galleryItem[0].camera.name )
     //this.dailyImage = this.galleryItem[ Math.floor((Math.random() * this.galleryItem.length))];
     this.earth_date = new Date( this.dailyImage.earth_date );
+
     console.log( "setRandomImage ", this.dailyImage.id, this.dailyImage.earth_date );
   }
 

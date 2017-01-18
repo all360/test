@@ -13,7 +13,7 @@ export class GalleryService {
 
     const KEY = "aZlmHCp3jD9sanwE8KvytidYArlTvlhwr3fEhYyM";
     let date = new Date();
-    let today = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+(date.getDate()-1);
+    let today = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+(date.getDate()-2);
     let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${today}&camera=${camera}&api_key=${KEY}`;
 
     let headers = new Headers({ 'Access-Control-Allow-Origin': 'http://localhost:4200' });
