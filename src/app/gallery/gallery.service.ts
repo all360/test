@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { RequestOptions, Headers, Http } from '@angular/http';
+import { RequestOptions, Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { ImageItems } from './imageItems';
+import { GalleryItem } from './gallery-item';
 
 @Injectable()
-export class ImageDayService {
+export class GalleryService {
 
   constructor(private http: Http) { }
 
-  getImage():Promise<ImageItem[]> {
+  getGallery():Promise<GalleryItem[]> {
 
     const KEY = "aZlmHCp3jD9sanwE8KvytidYArlTvlhwr3fEhYyM";
     let date = new Date();
@@ -22,7 +22,7 @@ export class ImageDayService {
     return this.http
       .get( url, options )
       .toPromise()
-      .then(response => response.json().photos as ImageItems[])
+      .then(response => response.json().photos as GalleryItem[])
       .catch(this.handleError);
   }
 

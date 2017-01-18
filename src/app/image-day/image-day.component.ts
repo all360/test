@@ -14,7 +14,6 @@ export class ImageDayComponent implements OnInit {
   imageItem: ImageItems[];
   dailyImage: ImageItems;
   earth_date: number;
-  //today: number = Date.now();
 
   constructor( private router: Router,
                private route: ActivatedRoute,

@@ -1,14 +1,13 @@
-<h2>
-  {{title}}
-</h2>
-
-<div class="p-y-lg app-block-main">
+<div class="p-y-lg app-block-main" *ngIf="dailyImage">
   <div class="container">
     <div class="row">
-
-      <div class="col-sm-5 col-sm-push-7 col-lg-7 col-lg-push-6">
+      <div class="col-sm-5 col-lg-7 ">
         <div class="image-holder">
-          <img src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG">
+          <h2>
+            {{title}}
+          </h2>
+          <img [src]="dailyImage.img_src">
+          <h4>{{ earth_date | date:'longDate'}}</h4>
         </div>
       </div>
     </div>

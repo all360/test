@@ -11,6 +11,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ImageDayComponent } from './image-day/image-day.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageDayService } from './image-day/image-day.service';
+import {GalleryService} from "./gallery/gallery.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ImageDayService } from './image-day/image-day.service';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [ImageDayService],
+  providers: [ImageDayService, GalleryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

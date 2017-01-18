@@ -1,0 +1,9 @@
+.app-block-main{
+  text-align: center;
+}
+
+
+.app-image-holder img{
+  width: auto;
+  max-height: 550px;
+}

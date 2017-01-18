@@ -1,17 +1,13 @@
-<h2>
-  {{title}}
-</h2>
-
-<div class="p-y-lg app-block-main" *ngIf="dailyImage">
+<div class="app-block-main" *ngIf="dailyImage">
   <div class="container">
     <div class="row">
-
-      <div class="col-sm-5 col-sm-push-7 col-lg-7 col-lg-push-6">
-        <div class="image-holder">
+        <div class="app-image-holder">
+          <h2>
+            {{title}}
+          </h2>
           <img [src]="dailyImage.img_src">
           <h4>{{ earth_date | date:'longDate'}}</h4>
         </div>
-      </div>
     </div>
   </div>
 </div>
