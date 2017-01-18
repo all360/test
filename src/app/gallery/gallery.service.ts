@@ -16,7 +16,9 @@ export class GalleryService {
     let today = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+(date.getDate()-2);
     let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${today}&camera=${camera}&api_key=${KEY}`;
 
-    let headers = new Headers({ 'Access-Control-Allow-Origin': 'https://all360.github.io' });
+    let headers = new Headers({ 'Access-Control-Allow-Origin': 'http://localhost:4200/' });
+
+    //let headers = new Headers({ 'Access-Control-Allow-Origin': 'https://all360.github.io' });
     let options = new RequestOptions({ headers: headers });
 
     return this.http

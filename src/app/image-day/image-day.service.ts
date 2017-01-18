@@ -16,6 +16,8 @@ export class ImageDayService {
     let today = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+(date.getDate()-1);
     let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${today}&api_key=${KEY}`;
 
+    let headers = new Headers({ 'Access-Control-Allow-Origin': 'http://localhost:4200/' });
+
     let headers = new Headers({ 'Access-Control-Allow-Origin': 'https://all360.github.io' });
     let options = new RequestOptions({ headers: headers });
 
