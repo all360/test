@@ -1,0 +1,40 @@
+<div class="app-block-main" *ngIf="dailyImage">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-9">
+        <h2>{{title}}</h2>
+      </div>
+      <div class="col-sm-3">
+
+        <ul class="nav navbar-nav navbar-left">
+        <li class="active dropdown" role="presentation">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <h4>Camera Name<span class="icon icon-chevron-small-down"></span></h4>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/gallery/FHAZ">FHAZ</a></li>
+            <li><a routerLink="/gallery/RHAZ">RHAZ</a></li>
+            <li><a routerLink="/gallery/MAST">MAST</a></li>
+            <li><a routerLink="/gallery/CHEMCAM">CHEMCAM</a></li>
+            <li><a routerLink="/gallery/MARDI">MARDI</a></li>
+            <li><a routerLink="/gallery/NAVCAM">NAVCAM</a></li>
+            <li><a routerLink="/gallery/PANCAM">PANCAM</a></li>
+            <li><a routerLink="/gallery/MINITES">MINITES</a></li>
+          </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <span *ngFor="let item of galleryItem; let i=index">
+        <div class="col-sm-6 col-md-3 app-image-holder" *ngIf="i<4">
+          <img [src]="item.img_src">
+          <h4>{{ formatDate(item.earth_date) | date:'longDate'}}</h4>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+.app-image-holder img{
+  width: auto;
+  max-height: 150px;
+}
+
+@media (min-width: 639px ) {
+  .app-image-holder img{
+    max-height: 175px;
+  }
+}
+
+@media (min-width: 941px ) {
+  .app-image-holder img{
+    max-height: 200px;
+  }
+}
