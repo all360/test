@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ImageItem } from './imageItem';
+import { ImageItems } from './imageItems';
 import { ImageDayService } from './image-day.service';
 
 @Component({
@@ -11,7 +11,10 @@ import { ImageDayService } from './image-day.service';
 })
 export class ImageDayComponent implements OnInit {
   title = 'Image of the Day';
-  imageItem: ImageItem[];
+  imageItem: ImageItems[];
+  dailyImage: ImageItems;
+  earth_date: number;
+  //today: number = Date.now();
 
   constructor( private router: Router,
                private route: ActivatedRoute,
@@ -19,18 +22,20 @@ export class ImageDayComponent implements OnInit {
 
   ngOnInit() {
       this.getImage();
+  }
 
-      /*this.imageDayService.getImage()
-      .subscribe(data => this.imageItem = data);*/
-
-      setTimeout(() => console.log("imageItem2", this.imageItem), 2000);
+  setRandomImage( data ):void{
+    this.imageItem = data;
+    this.dailyImage = this.imageItem[ Math.floor((Math.random() * this.imageItem.length))];
+    this.earth_date = new Date( this.dailyImage.earth_date );
+    console.log( "setRandomImage ", this.dailyImage.id, this.dailyImage.earth_date );
   }
 
   getImage(): void {
 
     this.route.params
       .switchMap((params: Params) => this.imageDayService.getImage())
-      .subscribe(data => this.imageItem = data);
+      .subscribe(data => this.setRandomImage( data));
   }
 
 }

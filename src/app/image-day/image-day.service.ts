@@ -3,7 +3,7 @@ import { RequestOptions, Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 
-import { ImageItem } from './imageItem';
+import { ImageItems } from './imageItems';
 
 @Injectable()
 export class ImageDayService {
@@ -23,7 +23,7 @@ export class ImageDayService {
     return this.http
       .get( url, options )
       .toPromise()
-      .then(response => response.json().photos as ImageItem[])
+      .then(response => response.json().photos as ImageItems[])
       .catch(this.handleError);
   }
 
